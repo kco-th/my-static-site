@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="my" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>True Hope - Software Development & IT Training Center (Since 2002)</title>
+
+  <!-- Google Fonts: Inter & Noto Sans Myanmar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Myanmar:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --th-navy-dark: #070e1d;
+      --th-navy-card: #0d182e;
+      --th-navy-border: #1e2e4f;
+      --th-gold-primary: #f59e0b;
+      --th-gold-light: #fef08a;
+      --th-cyan-accent: #38bdf8;
+      --th-blue-accent: #2563eb;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans Myanmar', sans-serif;
+      background-color: var(--th-navy-dark);
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+
+    .top-notice-bar {
+      background: linear-gradient(90deg, #091224 0%, #102142 50%, #091224 100%);
+      font-size: 0.8rem;
+      border-bottom: 1px solid var(--th-navy-border);
+    }
+
+    .navbar-truehope {
+      background: rgba(7, 14, 29, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--th-navy-border);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-truehope .nav-link {
+      color: #94a3b8;
+      font-weight: 500;
+      font-size: 0.88rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .navbar-truehope .nav-link:hover,
+    .navbar-truehope .nav-link.active {
+      color: #ffffff;
+      background: rgba(37, 99, 235, 0.15);
+    }
+
+    /* Logo Image Style */
+    .th-brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--th-cyan-accent);
+      
+      padding: 2px;
+      object-fit: contain;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
+      flex-shrink: 0;
+    }
+
+    .th-gold-badge {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(217, 119, 6, 0.3));
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      border-radius: 12px;
+      padding: 6px 14px;
+    }
+
+    .hero-section {
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.25) 0%, rgba(7, 14, 29, 0.98) 70%),
+                  linear-gradient(180deg, #070e1d 0%, #0b1730 100%);
+      padding: 4.5rem 0 4rem;
+      border-bottom: 1px solid var(--th-navy-border);
+    }
+
+    .hero-grid-pattern {
+      background-image: radial-gradient(rgba(56, 189, 248, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #ea580c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .quote-box {
+      background: rgba(13, 24, 46, 0.85);
+      border-left: 4px solid var(--th-gold-primary);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-dark-custom {
+      background: var(--th-navy-card);
+      border: 1px solid var(--th-navy-border);
+      border-radius: 18px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-dark-custom:hover {
+      border-color: var(--th-cyan-accent);
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(56, 189, 248, 0.15);
+    }
+
+    .course-poster-badge {
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .tech-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+    }
+
+    .solution-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-gold-action {
+      background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+      color: #070e1d;
+      font-weight: 800;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 22px;
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.3);
+      transition: all 0.2s;
+    }
+
+    .btn-gold-action:hover {
+      background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+      color: #000;
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline-cyan {
+      border: 1px solid var(--th-cyan-accent);
+      color: var(--th-cyan-accent);
+      font-weight: 600;
+      border-radius: 12px;
+      padding: 10px 20px;
+      background: transparent;
+      transition: all 0.2s;
+    }
+
+    .btn-outline-cyan:hover {
+      background: rgba(56, 189, 248, 0.15);
+      color: #ffffff;
+      border-color: #7dd3fc;
+    }
+
+    .toast-container-custom {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1090;
+    }
+
+    .form-control, .form-select {
+      background-color: #091428;
+      border: 1px solid var(--th-navy-border);
+      color: #f8fafc;
+      border-radius: 10px;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.88rem;
+    }
+
+    .form-control:focus, .form-select:focus {
+      background-color: #0c1a35;
+      border-color: var(--th-cyan-accent);
+      color: #ffffff;
+      box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= TOP NOTICE & HOTLINE BAR ================= -->
+  <div class="top-notice-bar py-2 px-3">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge bg-warning text-dark fw-bold px-2 py-1 rounded-pill">
+          <i class="fa-solid fa-award me-1"></i> SINCE 2002
+        </span>
+        <span class="text-slate-300 small">
+          ၂၄ နှစ်ကျော် အတွေ့အကြုံရှိ Software House &amp; IT Training Center
+        </span>
+      </div>
+      <div class="d-flex align-items-center gap-3 small">
+        <a href="tel:09974035249" class="text-warning text-decoration-none fw-semibold">
+          <i class="fa-solid fa-phone me-1"></i> Hotline: 09-9740 35249
+        </a>
+        <span class="text-secondary d-none d-md-inline">|</span>
+        <span class="text-light-emphasis d-none d-md-inline">
+          <i class="fa-solid fa-location-dot text-info me-1"></i> Kyauktadar Township, Yangon
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR (BRAND WITH LOGO) ================= -->
+  <nav class="navbar navbar-expand-lg navbar-truehope sticky-top py-2">
+    <div class="container">
+      
+      <!-- Brand Logo ထည့်သွင်းထားသောအပိုင်း -->
+      <a class="navbar-brand d-flex align-items-center gap-3 text-white m-0" href="#home">
+        <!-- True Hope Logo ပုံ -->
+        <img src="src/assets/logo.jpg" alt="True Hope Logo" class="rounded-circle shadow" style="width: 48px; height: 48px; object-fit: cover; border: 2px solid var(--th-cyan-accent);">
+        
+        <div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="fw-black fs-5 tracking-tight text-white mb-0">TRUE HOPE</span>
+            <span class="badge bg-primary bg-opacity-25 text-info border border-primary border-opacity-25 rounded-pill px-2 py-0 text-uppercase" style="font-size: 10px;">Center</span>
+          </div>
+          <small class="text-secondary d-block" style="font-size: 11px; margin-top: -3px;">
+            Software Development &amp; IT Training Center
+          </small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1 pt-3 pt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home"><i class="fa-solid fa-house me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#courses"><i class="fa-solid fa-book-bookmark me-1"></i> Our Courses </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#software"><i class="fa-solid fa-cubes me-1"></i> Systems</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#why-us"><i class="fa-solid fa-star me-1"></i> Key Benefits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="fa-solid fa-map-location-dot me-1"></i> Contact Us</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2 pt-2 pt-lg-0">
+          <div class="th-gold-badge d-none d-xl-flex align-items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-warning"></i>
+            <div class="lh-1 text-start">
+              <span class="d-block text-warning fw-bold" style="font-size: 9px; letter-spacing: 0.5px;">EXPERIENCE</span>
+              <span class="fw-bold text-white small">24+ YEARS</span>
+            </div>
+          </div>
+          <a href="#enroll" class="btn btn-gold-action btn-sm">
+            <i class="fa-solid fa-user-pen me-1"></i> Enroll Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="home" class="hero-section hero-grid-pattern">
+    <div class="container position-relative">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-7 text-center text-lg-start">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-primary bg-opacity-10 border border-primary border-opacity-25 text-info small mb-3">
+            <span class="spinner-grow spinner-grow-sm text-info" role="status"></span>
+            <span>Online Live Class &amp; In-Person (On-Campus) Available</span>
+          </div>
+
+          <h1 class="display-5 fw-black text-white lh-sm mb-3">
+            IT အနာဂတ်အတွက် <br>
+            <span class="gold-gradient-text">ကျွမ်းကျင်မှုသင်တန်း</span>
+          </h1>
+
+          <div class="quote-box mb-4">
+            <p class="fw-bold text-warning fs-5 mb-2">
+              “Programming ဆိုတာ ရေးတတ်ရုံနဲ့ မရဘူး၊ System တစ်ခုလုံး အလုပ်လုပ်ပုံကို သိရမယ်!”
+            </p>
+            <p class="text-secondary small mb-0 lh-base">
+              စာတွေ့သက်သက်မဟုတ်ဘဲ လက်တွေ့လုပ်ငန်းခွင်သုံး Enterprise Systems များကို နှစ်ပေါင်း ၂၄ နှစ်ကျော် တည်ဆောက်ခဲ့သော Software House ၏ အတွေ့အကြုံဖြင့် စနစ်တကျ မွေးထုတ်ပေးပါသည်။
+            </p>
+          </div>
+
+          <div class="row g-2 mb-4">
+            <div class="col-sm-4">
+              <div class="p-2 rounded-3 bg-dark border border-secondary border-opacity-25 text-center text-sm">
+                <i class="fa-solid fa-circle-check text-success me-1"></i> Beginner to Pro
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="p-2 rounded-3 bg-dark border border-secondary border-opacity-25 text-center text-sm">
+                <i class="fa-solid fa-circle-check text-success me-1"></i> Real-World Projects
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="p-2 rounded-3 bg-dark border border-secondary border-opacity-25 text-center text-sm">
+                <i class="fa-solid fa-circle-check text-success me-1"></i> Job Placement Aid
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3">
+            <a href="#enroll" class="btn btn-gold-action">
+              <i class="fa-solid fa-pencil me-1"></i> သင်တန်းအပ်နှံရန် (Register Now)
+            </a>
+            <a href="#courses" class="btn btn-outline-cyan">
+              <i class="fa-solid fa-graduation-cap me-1"></i> Courses  ကြည့်မည်
+            </a>
+            <a href="#software" class="btn btn-dark border-secondary">
+              <i class="fa-solid fa-server text-warning me-1"></i> Systems များ
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card card-dark-custom p-3 p-md-4 shadow-lg">
+            <div class="d-flex align-items-center justify-content-between pb-3 border-bottom border-secondary border-opacity-25 mb-3">
+              <div class="d-flex align-items-center gap-2">
+                <span class="rounded-circle bg-danger d-inline-block" style="width: 11px; height: 11px;"></span>
+                <span class="rounded-circle bg-warning d-inline-block" style="width: 11px; height: 11px;"></span>
+                <span class="rounded-circle bg-success d-inline-block" style="width: 11px; height: 11px;"></span>
+                <span class="ms-2 font-monospace text-secondary small">truehope_system_status.sh</span>
+              </div>
+              <span class="badge bg-success bg-opacity-20 text-success border border-success border-opacity-25 font-monospace">ONLINE</span>
+            </div>
+
+            <div class="font-monospace small mb-3">
+              <div class="p-3 bg-black bg-opacity-50 rounded-3 border border-secondary border-opacity-25 mb-3">
+                <p class="text-info fw-bold mb-1">// 5 PROFESSIONAL IT COURSES</p>
+                <div class="text-light-emphasis" style="font-size: 0.82rem;">
+                  <div>1. Modern Java Full-Stack (React + Spring Boot)</div>
+                  <div>2. ASP.NET Core MVC &amp; Blazor Course</div>
+                  <div>3. Python Web Dev (Django + Flask + DB)</div>
+                  <div>4. One Stop IT (C++, Java, Oracle Database)</div>
+                  <div>5. Java SE (Beginner to Professional)</div>
+                </div>
+              </div>
+
+              <div class="p-3 bg-black bg-opacity-50 rounded-3 border border-secondary border-opacity-25">
+                <p class="text-warning fw-bold mb-1">// ENTERPRISE SOFTWARE SUITE</p>
+                <div class="text-light-emphasis" style="font-size: 0.82rem;">
+                  <div>&gt; Smart Inventory &amp; Sales Management</div>
+                  <div>&gt; POS Counter Billing System</div>
+                  <div>&gt; Gold &amp; Jewellery Calculation System</div>
+                  <div>&gt; Meter Bill Control &amp; Payroll HR System</div>
+                  <div>&gt; Law Firm Information System</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-3 bg-primary bg-opacity-10 border border-primary border-opacity-25 d-flex align-items-center justify-content-between">
+              <div>
+                <span class="d-block text-secondary text-uppercase fw-bold" style="font-size: 10px;">Direct Admission Line</span>
+                <span class="fs-6 fw-bold text-warning font-monospace">09-9740 35249</span>
+              </div>
+              <button class="btn btn-sm btn-dark border-secondary" onclick="copyPhone('09974035249')">
+                <i class="fa-solid fa-copy text-info me-1"></i> Copy
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: 5 FEATURED COURSES ================= -->
+  <section id="courses" class="py-5" style="border-bottom: 1px solid var(--th-navy-border);">
+    <div class="container py-3">
+      <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-3 py-1 rounded-pill mb-2 text-uppercase fw-bold">
+          CAREER ORIENTED IT TRAINING
+        </span>
+        <h2 class="fw-black text-white display-6 mb-2">လက်တွေ့လုပ်ငန်းခွင်သုံး သင်တန်းများ</h2>
+        <p class="text-secondary small">
+          လုပ်ငန်းခွင် အတွေ့အကြုံ အစစ်အမှန်ရရှိစေရန် စာတွေ့လက်တွေ့ စနစ်တကျ သင်ကြားပေးသော သင်တန်းများ (Online / In-Person)
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Course 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card card-dark-custom h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="course-poster-badge bg-primary bg-opacity-20 text-info border border-primary border-opacity-25">
+                  Full-Stack Web
+                </span>
+                <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25">Live + On-Site</span>
+              </div>
+              <h4 class="fw-black text-white mb-1">Modern Java Full-Stack</h4>
+              <p class="text-secondary small mb-3">From HTML to React + TypeScript + Spring Boot</p>
+
+              <div class="d-flex flex-wrap gap-1 mb-3">
+                <span class="tech-tag text-warning">HTML5/CSS3</span>
+                <span class="tech-tag text-info">JS (ES6+)</span>
+                <span class="tech-tag text-primary">React + TS</span>
+                <span class="tech-tag text-success">Spring Boot</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+
+              <ul class="list-unstyled small text-light-emphasis border-top border-secondary border-opacity-25 pt-3 mb-4">
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>Front-End:</strong> React Hooks, State, Routing &amp; Axios</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>Back-End:</strong> Servlet, JDBC, Spring Boot, JPA &amp; Hibernate</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>Database:</strong> Migration, Flyway, Postman API Testing</li>
+                <li class="mb-2 text-warning"><i class="fa-solid fa-trophy me-2"></i><strong>Final Capstone:</strong> Full-Stack Real Application</li>
+              </ul>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25">
+              <button class="btn btn-sm btn-outline-info" onclick="openCourseDetails('java-fullstack')">
+                <i class="fa-solid fa-circle-info me-1"></i> အသေးစိတ်
+              </button>
+              <button class="btn btn-sm btn-gold-action" onclick="enrollCourse('Modern Java Full-Stack Web Developer Course')">
+                အပ်နှံမည်
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card card-dark-custom h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="course-poster-badge bg-secondary bg-opacity-20 text-light border border-secondary">
+                  Microsoft Tech
+                </span>
+                <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25">Full-Stack .NET</span>
+              </div>
+              <h4 class="fw-black text-white mb-1">ASP.NET Core &amp; Blazor</h4>
+              <p class="text-secondary small mb-3">Enterprise Web Application Development</p>
+
+              <div class="d-flex flex-wrap gap-1 mb-3">
+                <span class="tech-tag text-info">C# OOP</span>
+                <span class="tech-tag text-primary">.NET Core</span>
+                <span class="tech-tag text-danger">MVC Pattern</span>
+                <span class="tech-tag text-warning">Blazor SPA</span>
+                <span class="tech-tag">SQL Server</span>
+              </div>
+
+              <ul class="list-unstyled small text-light-emphasis border-top border-secondary border-opacity-25 pt-3 mb-4">
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>C# Logic:</strong> Advanced OOP, LINQ, Async/Await</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>ASP.NET Core MVC:</strong> Controllers, Razor, Auth</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>Blazor Components:</strong> Interactive SPA UI &amp; State</li>
+                <li class="mb-2 text-warning"><i class="fa-solid fa-trophy me-2"></i><strong>Entity Framework:</strong> Code-First, DB Context &amp; APIs</li>
+              </ul>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25">
+              <button class="btn btn-sm btn-outline-info" onclick="openCourseDetails('dotnet-blazor')">
+                <i class="fa-solid fa-circle-info me-1"></i> အသေးစိတ်
+              </button>
+              <button class="btn btn-sm btn-gold-action" onclick="enrollCourse('ASP.NET Core MVC & Blazor Full-Stack Course')">
+                အပ်နှံမည်
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card card-dark-custom h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="course-poster-badge bg-success bg-opacity-20 text-success border border-success border-opacity-25">
+                  Django &amp; Flask
+                </span>
+                <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25">Web &amp; Cloud</span>
+              </div>
+              <h4 class="fw-black text-white mb-1">Python Web Development</h4>
+              <p class="text-secondary small mb-3">Build Secure &amp; Scalable Web Apps from Scratch</p>
+
+              <div class="d-flex flex-wrap gap-1 mb-3">
+                <span class="tech-tag text-warning">Python 3</span>
+                <span class="tech-tag text-info">Flask API</span>
+                <span class="tech-tag text-success">Django ORM</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag text-primary">Git / Cloud</span>
+              </div>
+
+              <ul class="list-unstyled small text-light-emphasis border-top border-secondary border-opacity-25 pt-3 mb-4">
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>Core Python:</strong> Syntax, Logic, OOP &amp; Data Structures</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>Web Foundation:</strong> HTML5, CSS3, JavaScript (ES6+)</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>Flask &amp; Django:</strong> RESTful APIs, Admin Panel, ORM</li>
+                <li class="mb-2 text-warning"><i class="fa-solid fa-trophy me-2"></i><strong>Deployment:</strong> PostgreSQL, Git &amp; Cloud Hosting</li>
+              </ul>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25">
+              <button class="btn btn-sm btn-outline-info" onclick="openCourseDetails('python-web')">
+                <i class="fa-solid fa-circle-info me-1"></i> အသေးစိတ်
+              </button>
+              <button class="btn btn-sm btn-gold-action" onclick="enrollCourse('Python Web Development Course')">
+                အပ်နှံမည်
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card card-dark-custom h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="course-poster-badge bg-warning bg-opacity-20 text-warning border border-warning border-opacity-25">
+                  3 in 1 Package
+                </span>
+                <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25">Core Engineering</span>
+              </div>
+              <h4 class="fw-black text-white mb-1">One Stop IT Course</h4>
+              <p class="text-secondary small mb-3">C++, Java, Oracle Database</p>
+
+              <div class="d-flex flex-wrap gap-1 mb-3">
+                <span class="tech-tag text-info">C++</span>
+                <span class="tech-tag text-warning">Java</span>
+                <span class="tech-tag text-danger">Oracle DB</span>
+                <span class="tech-tag">SQL &amp; PL/SQL</span>
+                <span class="tech-tag text-success">DB Admin</span>
+              </div>
+
+              <ul class="list-unstyled small text-light-emphasis border-top border-secondary border-opacity-25 pt-3 mb-4">
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>C++ Programming:</strong> အခြေခံမှ အဆင့်မြင့်အထိ စနစ်တကျလေ့လာခြင်း</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>Java Programming:</strong> လုပ်ငန်းခွင်သုံး Java Application များ ဖန်တီးရန်</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>Oracle Database:</strong> ဒေတာစီမံခန့်ခွဲမှု၊ SQL/PL-SQL</li>
+                <li class="mb-2 text-warning"><i class="fa-solid fa-trophy me-2"></i><strong>Career Benefits:</strong> လုပ်ငန်းခွင်ဝင်ဆံ့မှု၊ သင်တန်းဆင်းလက်မှတ်</li>
+              </ul>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25">
+              <button class="btn btn-sm btn-outline-info" onclick="openCourseDetails('one-stop')">
+                <i class="fa-solid fa-circle-info me-1"></i> အသေးစိတ်
+              </button>
+              <button class="btn btn-sm btn-gold-action" onclick="enrollCourse('One Stop IT Course (C++, Java, Oracle DB)')">
+                အပ်နှံမည်
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card card-dark-custom h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="course-poster-badge bg-info bg-opacity-20 text-info border border-info border-opacity-25">
+                  Ground Up
+                </span>
+                <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25">Standard Edition</span>
+              </div>
+              <h4 class="fw-black text-white mb-1">Java SE Course</h4>
+              <p class="text-secondary small mb-3">Learn Java from the Ground Up (Beginner to Pro)</p>
+
+              <div class="d-flex flex-wrap gap-1 mb-3">
+                <span class="tech-tag text-warning">Java SE</span>
+                <span class="tech-tag text-info">OOP Design</span>
+                <span class="tech-tag">Collections</span>
+                <span class="tech-tag text-success">File I/O</span>
+                <span class="tech-tag text-danger">JDBC</span>
+              </div>
+
+              <ul class="list-unstyled small text-light-emphasis border-top border-secondary border-opacity-25 pt-3 mb-4">
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>Java Fundamentals:</strong> Syntax, Variables, Control Flow</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>OOP In-Depth:</strong> Inheritance, Polymorphism, Abstraction</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i><strong>Collections &amp; Exceptions:</strong> Lists, Maps, Try/Catch</li>
+                <li class="mb-2 text-warning"><i class="fa-solid fa-trophy me-2"></i><strong>Desktop Projects:</strong> File I/O, JDBC Database Connectivity</li>
+              </ul>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25">
+              <button class="btn btn-sm btn-outline-info" onclick="openCourseDetails('java-se')">
+                <i class="fa-solid fa-circle-info me-1"></i> အသေးစိတ်
+              </button>
+              <button class="btn btn-sm btn-gold-action" onclick="enrollCourse('Java SE Course (Beginner to Professional)')">
+                အပ်နှံမည်
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consultation Box -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card card-dark-custom h-100 p-4 text-center d-flex flex-column justify-content-between" style="background: linear-gradient(145deg, #0e1e3d, #142852);">
+            <div>
+              <div class="mx-auto rounded-circle bg-warning bg-opacity-20 text-warning d-flex align-items-center justify-content-center mb-3" style="width: 58px; height: 58px; font-size: 1.5rem;">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <h4 class="fw-bold text-white mb-2">ဘယ် Course ရွေးရမှန်း မသေချာဘူးလား?</h4>
+              <p class="text-secondary small mb-4">
+                သင့်လက်ရှိ အခြေအနေ၊ အချိန်ဇယားနှင့် IT ရည်မှန်းချက်အရ အသင့်တော်ဆုံး Course ကို အခမဲ့ ဆွေးနွေးတိုင်ပင်နိုင်ပါသည်။
+              </p>
+            </div>
+
+            <div class="d-grid gap-2">
+              <label class="btn btn-dark border-warning text-warning fw-bold">
+                <i class="fa-solid fa-phone me-1"></i> 09-9740 35249 ခေါ်ဆိုရန်
+              </label>
+              <a href="#enroll" class="btn btn-gold-action">
+                သင်တန်းအပ်နှံရန် Form သို့
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: SOFTWARE SOLUTIONS ================= -->
+  <section id="software" class="py-5" style="background: rgba(13, 24, 46, 0.45); border-bottom: 1px solid var(--th-navy-border);">
+    <div class="container py-3">
+      <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+        <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-3 py-1 rounded-pill mb-2 text-uppercase fw-bold">
+          ENTERPRISE SOFTWARE DEVELOPMENT
+        </span>
+        <h2 class="fw-black text-white display-6 mb-2">True Hope မှ ရေးသားထားသော Systems များ</h2>
+        <p class="text-secondary small">
+          နှစ်ပေါင်း ၂၄ နှစ်ကျော် လုပ်ငန်းခွင် အတွေ့အကြုံဖြင့် မြန်မာနိုင်ငံရှိ လုပ်ငန်းပေါင်းများစွာတွင် အောင်မြင်စွာ တပ်ဆင်အသုံးပြုနေသော စနစ်များ
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark-custom p-4 h-100">
+            <div class="solution-icon-box bg-primary bg-opacity-10 text-info">
+              <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+            <h5 class="fw-bold text-white mb-1">Smart Inventory &amp; Sales Management</h5>
+            <p class="text-warning small fw-semibold mb-2">ဂိုဒေါင်နှင့် အရောင်း စီမံခန့်ခွဲမှုစနစ်</p>
+            <p class="text-secondary small mb-3">
+              ကုန်ပစ္စည်း အဝင်/အထွက်၊ Stock လက်ကျန်စာရင်း၊ Barcode Scanner ချိတ်ဆက်မှု၊ ကုန်ပစ္စည်း ပြတ်လပ်မှု အလိုအလျောက် သတိပေးစနစ်။
+            </p>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-success small fw-semibold">
+              <i class="fa-solid fa-circle-check me-1"></i> Wholesale &amp; Retail Ready
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark-custom p-4 h-100">
+            <div class="solution-icon-box bg-success bg-opacity-10 text-success">
+              <i class="fa-solid fa-cash-register"></i>
+            </div>
+            <h5 class="fw-bold text-white mb-1">POS System</h5>
+            <p class="text-warning small fw-semibold mb-2">အရောင်းကောင်တာ ငွေကိုင်စနစ်</p>
+            <p class="text-secondary small mb-3">
+              စတိုးဆိုင်၊ မတ်နှင့် စားသောက်ဆိုင်များအတွက် ငွေရှင်းကောင်တာသုံး သွက်လက်မြန်ဆန်ပြီး Thermal Printer၊ Cash Drawer အပြည့်အစုံ ချိတ်ဆက်နိုင်ခြင်း။
+            </p>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-success small fw-semibold">
+              <i class="fa-solid fa-circle-check me-1"></i> Multi-Cashier &amp; Fast Checkout
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark-custom p-4 h-100">
+            <div class="solution-icon-box bg-warning bg-opacity-10 text-warning">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <h5 class="fw-bold text-white mb-1">Gold and Jewellery System</h5>
+            <p class="text-warning small fw-semibold mb-2">ရွှေနှင့် ကျောက်မျက်ရတနာ အရောင်းစနစ်</p>
+            <p class="text-secondary small mb-3">
+              မြန်မာ့ရိုးရာ ကျပ်၊ ပဲ၊ ရွေး အလေးချိန် တိကျစွာ တွက်ချက်မှု၊ လက်ခ၊ အလျော့တွက်၊ နေ့စဉ်ပေါက်စျေးနှင့် ရွှေလဲ/ရွှေပေါင် စာရင်း စီမံခန့်ခွဲမှု။
+            </p>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-success small fw-semibold">
+              <i class="fa-solid fa-circle-check me-1"></i> Traditional Weight Accuracy
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark-custom p-4 h-100">
+            <div class="solution-icon-box bg-info bg-opacity-10 text-info">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h5 class="fw-bold text-white mb-1">Meter Bill Control System</h5>
+            <p class="text-warning small fw-semibold mb-2">မီတာခ ကောက်ခံ စီမံခန့်ခွဲမှုစနစ်</p>
+            <p class="text-secondary small mb-3">
+              ကွန်ဒို၊ စက်မှုဇုန်နှင့် တိုက်ခန်းဝင်းများအတွက် ယူနစ်ဖတ်ရှု မှတ်တမ်းတင်ခြင်း၊ စျေးနှုန်းအဆင့်ဆင့်တွက်ချက်ခြင်းနှင့် Invoice ပြေစာထုတ်ပေးခြင်း။
+            </p>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-success small fw-semibold">
+              <i class="fa-solid fa-circle-check me-1"></i> Tiered Billing Engine
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark-custom p-4 h-100">
+            <div class="solution-icon-box bg-primary bg-opacity-10 text-primary">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </div>
+            <h5 class="fw-bold text-white mb-1">Payroll System</h5>
+            <p class="text-warning small fw-semibold mb-2">လစာနှင့် ဝန်ထမ်းရေးရာ စီမံခန့်ခွဲမှု</p>
+            <p class="text-secondary small mb-3">
+              ဝန်ထမ်း Attendance၊ ခွင့်ရက်၊ Overtime (OT)၊ SSB နုတ်ယူမှုနှင့် လစဉ် Payslip ဒစ်ဂျစ်တယ် ထုတ်ပေးမှုတို့ကို လုံခြုံတိကျစွာ တွက်ချက်ပေးခြင်း။
+            </p>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-success small fw-semibold">
+              <i class="fa-solid fa-circle-check me-1"></i> Automated Payslip &amp; Tax
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark-custom p-4 h-100">
+            <div class="solution-icon-box bg-danger bg-opacity-10 text-danger">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <h5 class="fw-bold text-white mb-1">Law Firm Information System</h5>
+            <p class="text-warning small fw-semibold mb-2">ဥပဒေရုံးနှင့် အမှုတွဲစီမံခန့်ခွဲမှုစနစ်</p>
+            <p class="text-secondary small mb-3">
+              အမှုသည်စာရင်း၊ တရားရုံးချိန်းရက်များ (Court Schedules)၊ အမှုတွဲစာရွက်စာတမ်းမှတ်တမ်းများနှင့် အမှုဖြစ်စဉ်များကို စနစ်တကျ ထိန်းသိမ်းခြင်း။
+            </p>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-success small fw-semibold">
+              <i class="fa-solid fa-circle-check me-1"></i> Court Hearing Alerts &amp; Archive
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: WHY CHOOSE US ================= -->
+  <section id="why-us" class="py-5" style="border-bottom: 1px solid var(--th-navy-border);">
+    <div class="container py-3">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-6">
+          <span class="badge bg-primary bg-opacity-10 text-info border border-primary border-opacity-25 px-3 py-1 rounded-pill mb-2 text-uppercase fw-bold">
+            WHY TRUE HOPE IT TRAINING CENTER?
+          </span>
+          <h4 class="fw-black text-white display-8 mb-5">
+            အောင်မြင်တဲ့ Developer တစ်ယောက်ဖြစ်ဖို့ <br>
+            <span class="gold-gradient-text">လုပ်ငန်းခွင် အတွေ့အကြုံ အစစ်အမှန်ကို ရယူပါ</span>
+          </h4>
+          
+          <div class="vstack gap-3 text-secondary small">
+            <div class="p-3 rounded-3 bg-dark border border-secondary border-opacity-25 d-flex gap-3">
+              <i class="fa-solid fa-screwdriver-wrench text-warning fs-5 mt-1"></i>
+              <div>
+                <strong class="text-white d-block mb-1">Industry အခက်အခဲများ ကျော်ဖြတ်နိုင်ရန်</strong>
+                <span>သီအိုရီစာအုပ်ဖတ်ရုံမဟုတ်ဘဲ တကယ့် Software အကြီးစားများ ရေးသားရာတွင် တွေ့ကြုံရမည့် Database, Performance, Architecture ပြဿနာများကို ဖြေရှင်းနည်း သင်ကြားပေးခြင်း။</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-3 bg-dark border border-secondary border-opacity-25 d-flex gap-3">
+              <i class="fa-solid fa-laptop-code text-warning fs-5 mt-1"></i>
+              <div>
+                <strong class="text-white d-block mb-1">လက်တွေ့ Real-World Projects</strong>
+                <span>သင်ယူပြီးဆုံးသည့်အခါ Portfolio တွင် အမှန်တကယ် ပြသနိုင်သည့် Full-Stack Web Application နှင့် Database Project များကို ကိုယ်တိုင်တည်ဆောက်ရမည်။</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-3 bg-dark border border-secondary border-opacity-25 d-flex gap-3">
+              <i class="fa-solid fa-certificate text-warning fs-5 mt-1"></i>
+              <div>
+                <strong class="text-white d-block mb-1">Professional သင်ကြားမှုနှင့် အသိအမှတ်ပြု လက်မှတ်</strong>
+                <span>လုပ်ငန်းခွင်အတွေ့အကြုံရှိ ဆရာများ ကိုယ်တိုင် သင်ကြားပြီး သင်တန်းပြီးဆုံးပါက True Hope IT Center မှ Certificate ချီးမြှင့်ခြင်း။</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="card card-dark-custom p-4 text-center">
+                <div class="display-5 fw-black text-info">24+</div>
+                <div class="text-white fw-bold small text-uppercase">Years Experience</div>
+                <small class="text-secondary">၂၀၀၂ ခုနှစ်မှ စတင်ရပ်တည်ခဲ့</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card card-dark-custom p-4 text-center">
+                <div class="display-5 fw-black text-warning">100%</div>
+                <div class="text-white fw-bold small text-uppercase">Job Oriented</div>
+                <small class="text-secondary">လုပ်ငန်းခွင်တိုက်ရိုက် အသုံးဝင်မှု</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card card-dark-custom p-4 text-center">
+                <div class="display-5 fw-black text-success">6+</div>
+                <div class="text-white fw-bold small text-uppercase">Major Systems</div>
+                <small class="text-secondary">လုပ်ငန်းသုံး Deployed Solutions</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card card-dark-custom p-4 text-center">
+                <div class="display-5 fw-black text-primary">2-Way</div>
+                <div class="text-white fw-bold small text-uppercase">Learning Mode</div>
+                <small class="text-secondary">Online Live &amp; In-Person</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: ENROLLMENT FORM ================= -->
+  <section id="enroll" class="py-5" style="background: rgba(9, 18, 36, 0.7); border-bottom: 1px solid var(--th-navy-border);">
+    <div class="container py-3">
+      
+      <div class="text-center mx-auto mb-4" style="max-width: 650px;">
+        <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-1 rounded-pill mb-2 text-uppercase fw-bold">
+          ONLINE REGISTRATION
+        </span>
+        <h2 class="fw-black text-white display-6 mb-2">သင်တန်းအပ်နှံရန် (Register Now)</h2>
+        <p class="text-secondary small">
+          အောက်ပါ အချက်အလက်များကို ဖြည့်စွက်၍ သင်တန်းအတွက် စာရင်းပေးသွင်းနိုင်ပါသည်။
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card card-dark-custom p-4 p-md-5 shadow-lg">
+            
+            <form id="enrollmentForm">
+              <div class="row g-3">
+                
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-light">သင်တန်းသားအမည် (Full Name) *</label>
+                  <input type="text" name="fullName" id="studentName" class="form-control" placeholder="ဦး / ဒေါ် / မောင် / မ" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-light">ဖုန်းနံပါတ် (Phone Number) *</label>
+                  <input type="tel" name="phone" id="studentPhone" class="form-control" placeholder="09xxxxxxxxx" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-light">တက်ရောက်လိုသော Course (Select Course) *</label>
+                  <select name="course" id="courseSelect" class="form-select" required>
+                    <option value="Modern Java Full-Stack Web Developer Course">Modern Java Full-Stack (React + Spring Boot)</option>
+                    <option value="ASP.NET Core MVC & Blazor Full-Stack Course">ASP.NET Core MVC &amp; Blazor Course</option>
+                    <option value="Python Web Development Course">Python Web Development (Django + Flask + DB)</option>
+                    <option value="One Stop IT Course (C++, Java, Oracle DB)">One Stop IT Course (C++, Java, Oracle DB)</option>
+                    <option value="Java SE Course (Beginner to Professional)">Java SE Course (Beginner to Professional)</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-light">တက်ရောက်လိုသည့် ပုံစံ (Learning Mode) *</label>
+                  <select name="learningMode" id="modeSelect" class="form-select" required>
+                    <option value="Online Class (Live)">Online Class (Live အွန်လိုင်းမှ တက်ရောက်မည်)</option>
+                    <option value="In-Person Class (Kyauktadar)">In-Person Class (ကျောက်တံတား သင်တန်းကျောင်းတွင် တက်မည်)</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label small fw-semibold text-light">ဖြည့်စွက်မှတ်ချက် / မေးမြန်းလိုသည်များ (Optional Note)</label>
+                  <textarea name="message" id="notes" class="form-control" rows="3" placeholder="အချိန်ဇယား သို့မဟုတ် အခြားသိလိုသည်များကို ရေးသားနိုင်ပါသည်..."></textarea>
+                </div>
+
+                <div class="col-12 pt-2">
+                  <button type="submit" id="submitBtn" class="btn btn-gold-action w-100 py-3 fw-bold">
+                    <i class="fa-solid fa-paper-plane me-1"></i> သင်တန်းအပ်နှံမှု အတည်ပြု ပေးပို့မည် (Submit Application)
+                  </button>
+                </div>
+
+              </div>
+            </form>
+
+            <div id="enrollSuccessAlert" class="alert alert-success d-none mt-4 mb-0 d-flex align-items-center gap-3">
+              <i class="fa-solid fa-circle-check fs-4 text-success"></i>
+              <div>
+                <strong>သင်တန်းအပ်နှံမှု အောင်မြင်ပါသည်!</strong>
+                <p class="small mb-0">True Hope သင်တန်းကျောင်းမှ ဖုန်းနံပါတ် <strong>09-9740 35249</strong> ဖြင့် မကြာမီ ပြန်လည်ဆက်သွယ်ပေးပါမည်။</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: CONTACT & LOCATION ================= -->
+  <section id="contact" class="py-5">
+    <div class="container py-3">
+      <div class="text-center mx-auto mb-5" style="max-width: 650px;">
+        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-3 py-1 rounded-pill mb-2 text-uppercase fw-bold">
+          CONTACT &amp; CAMPUS LOCATION
+        </span>
+        <h2 class="fw-black text-white display-5 mb-2">Contact Information</h2>
+        <p class="text-secondary small">
+          ကျောက်တံတားမြို့နယ်ရှိ သင်တန်းကျောင်းသို့ လူကိုယ်တိုင် လာရောက်ဆွေးနွေးနိုင်သလို ဖုန်းဖြင့်လည်း တိုက်ရိုက် မေးမြန်းနိုင်ပါသည်။
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card card-dark-custom p-4 h-100">
+            <div class="solution-icon-box bg-info bg-opacity-10 text-info">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <h5 class="fw-bold text-white mb-2">ကျောင်းတည်နေရာလိပ်စာ</h5>
+            <p class="text-secondary small lh-base mb-2">
+              အမှတ် (၄၈/၅၀)၊ ဒုတိယထပ်၊ ၃၆ လမ်း၊ ကုန်သည်လမ်း၊ ကျောက်တံတားမြို့နယ်၊ ရန်ကုန်မြို့။
+            </p>
+            <small class="text-secondary d-block">
+              Building No (48/50), 2nd Floor, 36 Street Avenue, Merchant Road, Kyauktadar Township, Yangon.
+            </small>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card card-dark-custom p-4 h-100">
+            <div class="solution-icon-box bg-warning bg-opacity-10 text-warning">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <h5 class="fw-bold text-white mb-2">တိုက်ရိုက်ဖုန်းလိုင်း (Hotline)</h5>
+            <div class="fs-4 fw-bold text-warning font-monospace mb-2">09-9740 35249</div>
+            <p class="text-secondary small mb-3">
+              ဖုန်းခေါ်ဆို၍ဖြစ်စေ၊ Viber မှဖြစ်စေ အချိန်မရွေး စုံစမ်းမေးမြန်းနိုင်ပါသည်။
+            </p>
+            <button class="btn btn-sm btn-dark border-secondary text-info" onclick="copyPhone('09974035249')">
+              <i class="fa-solid fa-copy me-1"></i> ဖုန်းနံပါတ် ကူးယူရန် (Copy Phone)
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card card-dark-custom p-4 h-100">
+            <div class="solution-icon-box bg-primary bg-opacity-10 text-primary">
+              <i class="fa-solid fa-business-time"></i>
+            </div>
+            <h5 class="fw-bold text-white mb-2">သင်တန်းနှင့် ရုံးဖွင့်ချိန်</h5>
+            <p class="text-secondary small mb-1">
+              <strong>တနင်္လာ မှ တနင်္ဂနွေ အထိ</strong>
+            </p>
+            <p class="text-warning small mb-2">မနက် ၇:၀၀ နာရီ မှ ညနေ ၆ နာရီအထိ</p>
+            <small class="text-secondary">Weekdays &amp; Weekend Batches Available</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GLOBAL FOOTER (WITH LOGO) ================= -->
+  <footer class="py-4 border-top border-secondary border-opacity-25 bg-black bg-opacity-40">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div class="d-flex align-items-center gap-2">
+          <!-- Footer Logo ပုံ -->
+          <img src="src/assets/logo.jpg" alt="True Hope Logo" class="rounded-circle shadow" style="width: 48px; height: 48px; object-fit: cover; border: 2px solid var(--th-cyan-accent);">
+          <div>
+            <span class="fw-bold text-white small">TRUE HOPE</span>
+            <small class="text-secondary d-block" style="font-size: 10px;">Software Development &amp; IT Training Center</small>
+          </div>
+        </div>
+
+        <div class="text-secondary small text-center text-md-end">
+          <div>© 2002 - 2026 True Hope IT Training Center. All rights reserved.</div>
+          <small>Building No (48/50), 36th Street, Kyauktadar Township, Yangon, Myanmar.</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= COURSE DETAILS MODAL ================= -->
+  <div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content card-dark-custom text-light">
+        <div class="modal-header border-secondary border-opacity-25">
+          <h5 class="modal-title fw-bold text-warning" id="courseModalTitle">Course Title</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="courseModalBody"></div>
+        <div class="modal-footer border-secondary border-opacity-25">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">ပိတ်မည်</button>
+          <button type="button" class="btn btn-gold-action btn-sm" id="modalEnrollBtn">ဤသင်တန်းသို့ အပ်နှံမည်</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Feedback -->
+  <div class="toast-container-custom">
+    <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toastMessage">Notification message</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.3 Bundle with Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    //for security
+// Right-Click (Context Menu) ပိတ်ခြင်း
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+// View Source Shortcut (Ctrl+U) နှင့် DevTools (F12, Ctrl+Shift+I) ပိတ်ခြင်း
+document.onkeydown = function(e) {
+  // F12 key
+  if (e.keyCode === 123) {
+    return false;
+  }
+  // Ctrl + U (View Source)
+  if (e.ctrlKey && e.keyCode === 85) {
+    return false;
+  }
+  // Ctrl + Shift + I သို့မဟုတ် Ctrl + Shift + J (Inspect / Console)
+  if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) {
+    return false;
+  }
+  // Ctrl + S (Save Page)
+  if (e.ctrlKey && e.keyCode === 83) {
+    return false;
+  }
+};
+//for security
+
+
+    const courseDetails = {
+      'java-fullstack': {
+        title: "Modern Java Full-Stack Web Developer Course",
+        subtitle: "From HTML to React + TypeScript + Spring Boot (Beginner to Professional)",
+        mode: "Online Live & In-Person Class Available",
+        modules: [
+          { name: "Front-End Development", items: ["HTML & Bootstrap (UI Basics)", "JavaScript Core & DOM Manipulation", "Modern JS (ES6+) & TypeScript Basics", "React Frontend Development (JSX, Components)", "React State, Props & Hooks", "Client-Side Routing with React Router", "JSON Data Handling & Consuming REST APIs", "Global State Management Basics (Context API)"] },
+          { name: "Java Back-End & Database", items: ["Servlet and JDBC Essentials", "Spring Boot Core Concepts & Architecture", "JPA & Hibernate (Database ORM)", "Database Migration (Flyway/Liquibase)", "Building REST APIs with Spring Boot", "Data Validation & Global Exception Handling", "API Testing with Postman", "CORS & Security Basics", "Source Control with Git & GitHub"] },
+          { name: "Final Capstone Project", items: ["Full-Stack Real-World Production Application Integration"] }
+        ]
+      },
+      'dotnet-blazor': {
+        title: "ASP.NET Core MVC & Blazor Course",
+        subtitle: "Full-Stack Enterprise Web Development Course (.NET, C#, Blazor)",
+        mode: "Online & In-Person Available",
+        modules: [
+          { name: "C# & .NET Core Fundamentals", items: ["C# Language Basics to Advanced OOP", "Generics, Delegates, Events & LINQ Queries", "Asynchronous Programming (async/await)"] },
+          { name: "ASP.NET Core MVC", items: ["MVC Architecture & Controllers", "Razor Views & Partial Views", "Model Binding, Validation & Authentication", "RESTful Web APIs for Enterprise Clients"] },
+          { name: "Blazor Single Page Application (SPA)", items: ["Blazor Server & WebAssembly Components", "State Management & Event Handling", "Entity Framework Core (Code-First & Migration)", "SQL Server Database Integration"] }
+        ]
+      },
+      'python-web': {
+        title: "Python Web Development Course",
+        subtitle: "Learn to Build Modern & Secure Web Applications from Scratch",
+        mode: "Online Live & In-Person Classes",
+        modules: [
+          { name: "1. Core Python", items: ["Python Fundamentals, Syntax, Data Structures, Logic, OOP"] },
+          { name: "2. Web Foundations", items: ["HTML5, CSS3, JavaScript (ES6+), Responsive Design"] },
+          { name: "3. Flask Framework", items: ["Building Dynamic Web Apps, Routing, Jinja Templates, Lightweight APIs"] },
+          { name: "4. Django Framework", items: ["Advanced Web Apps, Admin Panel, Django ORM, E-commerce Projects"] },
+          { name: "5. Database & Deployment", items: ["SQL (PostgreSQL), Deployment on Cloud (Heroku, AWS), Git & GitHub"] }
+        ]
+      },
+      'one-stop': {
+        title: "One Stop IT Course",
+        subtitle: "IT အနာဂတ်အတွက် ကျွမ်းကျင်မှုသင်တန်း (C++, Java, Oracle Database)",
+        mode: "On-Campus & Online Class",
+        modules: [
+          { name: "C++ Programming", items: ["အခြေခံမှ အဆင့်မြင့်အထိ စနစ်တကျလေ့လာခြင်း", "Algorithm & Logic Building", "Using Arrays and File Management"] },
+          { name: "Java Programming", items: ["လုပ်ငန်းခွင်သုံး Java Application များ ဖန်တီးရန်", "Object-Oriented Programming (OOP)", "Desktop & Enterprise Foundations"] },
+          { name: "Oracle Database", items: ["ဒေတာစီမံခန့်ခွဲမှု (Database Admin Basics)", "SQL & PL/SQL Stored Procedures & Triggers", "Enterprise Query Optimization"] }
+        ]
+      },
+      'java-se': {
+        title: "Java SE Course (Beginner to Professional)",
+        subtitle: "Learn Java from the Ground Up",
+        mode: "Online & In-Person Available",
+        modules: [
+          { name: "Java Core Foundations", items: ["Java Fundamentals & IDE Setup", "Control Structures, Methods, Arrays"] },
+          { name: "Object-Oriented Programming", items: ["Classes, Objects, Inheritance, Polymorphism, Abstraction, Encapsulation"] },
+          { name: "Advanced Java SE", items: ["Collections Framework (List, Set, Map)", "Exception Handling & File I/O Operations", "JDBC Database Connectivity with Hands-on Projects"] }
+        ]
+      }
+    };
+
+    function openCourseDetails(key) {
+      const data = courseDetails[key];
+      if (!data) return;
+
+      document.getElementById('courseModalTitle').innerText = data.title;
+      let html = `
+        <div class="mb-3">
+          <p class="text-secondary small mb-1">${data.subtitle}</p>
+          <span class="badge bg-primary bg-opacity-20 text-info border border-primary border-opacity-25">${data.mode}</span>
+        </div>
+      `;
+
+      data.modules.forEach(mod => {
+        html += `
+          <div class="p-3 rounded-3 bg-black bg-opacity-40 border border-secondary border-opacity-25 mb-3">
+            <h6 class="fw-bold text-warning mb-2"><i class="fa-solid fa-code me-1"></i> ${mod.name}</h6>
+            <ul class="mb-0 ps-3 small text-light-emphasis">
+              ${mod.items.map(it => `<li class="mb-1">${it}</li>`).join('')}
+            </ul>
+          </div>
+        `;
+      });
+
+      document.getElementById('courseModalBody').innerHTML = html;
+      
+      const enrollBtn = document.getElementById('modalEnrollBtn');
+      enrollBtn.onclick = function() {
+        const modal = bootstrap.Modal.getInstance(document.getElementById('courseModal'));
+        if (modal) modal.hide();
+        enrollCourse(data.title);
+      };
+
+      const myModal = new bootstrap.Modal(document.getElementById('courseModal'));
+      myModal.show();
+    }
+
+    function enrollCourse(courseName) {
+      const select = document.getElementById('courseSelect');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value.includes(courseName) || courseName.includes(select.options[i].text)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      const enrollSection = document.getElementById('enroll');
+      if (enrollSection) {
+        enrollSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function copyPhone(phone) {
+      const tempInput = document.createElement("input");
+      tempInput.value = phone;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand("copy");
+        showToast("ဖုန်းနံပါတ် ကူးယူပြီးပါပြီ: " + phone);
+      } catch (err) {
+        showToast("ကူးယူ၍ မရပါ: " + phone);
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    function showToast(message) {
+      const toastEl = document.getElementById('liveToast');
+      document.getElementById('toastMessage').innerText = message;
+      const toast = new bootstrap.Toast(toastEl, { delay: 3500 });
+      toast.show();
+    }
+
+    // ================= GOOGLE SHEET SUBMIT SCRIPT =================
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzJ55eoAndWGGm4Cg43jXsAX6GBRNkSUN4txZ5dwV5l7EkRLgBJFp6IKF58RtnN4C4dvw/exec";
+
+    const form = document.getElementById('enrollmentForm');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.innerHTML;
+        
+        // Button Loading State
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i>စာရင်းပေးပို့နေပါသည်...';
+
+        const formData = new FormData(form);
+
+        fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors' // CORS Issue ကို ကျော်လွှားရန်
+        })
+        .then(() => {
+          // Success State
+          const alertBox = document.getElementById('enrollSuccessAlert');
+          if (alertBox) alertBox.classList.remove('d-none');
+
+          showToast("သင်တန်းအပ်နှံမှု အောင်မြင်ပါသည်။ Google Sheet သို့ ပေးပို့ပြီးပါပြီ။");
+          form.reset();
+        })
+        .catch(error => {
+          console.error('Submission Error:', error);
+          showToast("စာရင်းပေးပို့ရာတွင် ချို့ယွင်းချက်ရှိပါသည်။ ကျောင်းဖုန်းသို့ တိုက်ရိုက်ဆက်သွယ်ပေးပါ။");
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        });
+      });
+    }
+  </script>
+</body>
+</html>
